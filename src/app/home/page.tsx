@@ -1,6 +1,7 @@
 'use client';
 
 import { useSearchParams } from 'next/navigation';
+import WelcomeMessage from './WelcomeMessage';
 
 export default function HomePage() {
   const searchParams = useSearchParams();
@@ -37,12 +38,13 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="p-8 text-center">
+    <div className="p-8 text-center h-screen">
         <h1 className="text-3xl font-bold mb-4">Home Page</h1>
+        
       <div className="font-semibold text-center text-3xl text-amber-600">
       
-      <p className="mb-6">
-        Welcome, <span className="font-semibold text-center text-3xl text-amber-600">{username ? username : 'Guest'}</span>!
+      <p className="font-semibold text-center text-3xl text-amber-600">
+        <WelcomeMessage username={username} />
       </p>
       </div>
 

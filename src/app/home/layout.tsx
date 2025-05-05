@@ -1,4 +1,7 @@
 import Navbar from '../../components/Navbar';
+import Footer from '../../components/footer';
+
+import { VehicleProvider } from '../../context/VehicleContext';
 
 export default function HomeLayout({
   children,
@@ -9,7 +12,12 @@ export default function HomeLayout({
     <html lang="en">
       <body>
         <Navbar />
-        <main>{children}</main>
+        <main>
+          <VehicleProvider>
+          {children}
+        </VehicleProvider>
+        </main>
+        <Footer/>
       </body>
     </html>
   );
